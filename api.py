@@ -24,6 +24,10 @@ def get_db_connection():
     )
     return connection
 
+@app.route('/')
+def home():
+    return '/emails (GET) --> to fetch emails'
+
 @app.route('/emails', methods=['GET'])
 def get_emails():
     connection = get_db_connection()
