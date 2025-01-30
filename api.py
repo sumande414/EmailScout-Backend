@@ -40,7 +40,10 @@ def get_emails():
     cursor.close()
     connection.close()
 
-    return jsonify(emails)
+    response = jsonify(emails)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
+
 
 if __name__ == '__main__':
 
