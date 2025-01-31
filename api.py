@@ -44,6 +44,20 @@ def get_emails():
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
+@app.route('/orders', methods=['GET'])
+def get_orders():
+    connection = get_db_connection()
+    cursor = connection.cursor()
+
+    cursor.execute('SELECT * FROM Orders')
+    orders = cursor.fetchall()
+
+    cursor.close()
+    connection.close()
+
+    response = jsonify(orders)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 if __name__ == '__main__':
 
