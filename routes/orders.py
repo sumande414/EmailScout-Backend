@@ -8,7 +8,7 @@ def get_orders():
     connection = get_db_connection()
     cursor = connection.cursor()
 
-    cursor.execute('SELECT * FROM Orders')
+    cursor.execute('SELECT * FROM Orders ORDER BY date_of_order DESC')
     orders = cursor.fetchall()
 
     cursor.close()
