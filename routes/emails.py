@@ -3,7 +3,7 @@ from db import get_db_connection
 
 emails_bp = Blueprint('emails', __name__)
 
-@emails_bp.route('/emails', methods=['GET'])
+@emails_bp.route('/api/emails', methods=['GET'])
 def get_emails():
     connection = get_db_connection()
     cursor = connection.cursor()
