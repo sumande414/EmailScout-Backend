@@ -8,13 +8,13 @@ app = Flask(__name__)
 app.register_blueprint(emails_bp)
 app.register_blueprint(orders_bp)
 
-@app.route('/')
+@app.route('/api/')
 def home():
     return jsonify({
         "message": "Welcome to the Electronics Store API",
         "endpoints": {
-            "/emails": "GET - Fetch all emails",
-            "/orders": "GET - Fetch all orders"
+            "api/emails": "GET - Fetch all emails",
+            "api/orders": "GET - Fetch all orders"
         }
     })
 
