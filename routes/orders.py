@@ -3,7 +3,7 @@ from db import get_db_connection
 
 orders_bp = Blueprint('orders', __name__)
 
-@orders_bp.route('/orders', methods=['GET'])
+@orders_bp.route('/api/orders', methods=['GET'])
 def get_orders():
     connection = get_db_connection()
     cursor = connection.cursor()
